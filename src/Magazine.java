@@ -1,22 +1,8 @@
-public class Magazine implements User{
-    private String name;
-    private int id;
+public class Magazine extends Library implements User{
 
-    public String getName(){
-        return name;
-    }
-
-    public int getId(){
-        return id;
-    }
-
-    public void setName(String n){
-        name = n;
-    }
-
-    public void setId(int i){
-        id = i;
-    }
+   public Magazine(String name, int id){
+       super(name, id);
+   }
 
     @Override
     public void borrowItem() {
@@ -27,5 +13,15 @@ public class Magazine implements User{
     public void returnItem() {
         System.out.println("The user has returned Magazine");
 
+    }
+
+    @Override
+    public void addItem() {
+        System.out.println("Magazine added");
+    }
+
+    @Override
+    public void removeItem() {
+        System.out.println("Magazine removed");
     }
 }

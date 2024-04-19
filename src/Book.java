@@ -1,24 +1,16 @@
-public class Book implements User{
-    private final String name;
+public class Book extends Library implements User{
+
     private final String author;
-    private final int id;
 
     public Book(String name, String author, int id){
-        this.name = name;
+        super(name, id);
         this.author = author;
-        this.id = id;
-    }
-    public String getName(){
-        return name;
     }
 
-    public String getAuthor(){
+    public String getAuthor() {
         return author;
     }
 
-    public int getId(){
-        return id;
-    }
     @Override
     public void borrowItem() {
         System.out.println("The user has borrowed the book");
@@ -27,6 +19,17 @@ public class Book implements User{
     @Override
     public void returnItem() {
         System.out.println("the Book is returned");
+
+    }
+
+    @Override
+    public void addItem() {
+        System.out.println("The item has been added");
+    }
+
+    @Override
+    public void removeItem() {
+        System.out.println("The item has been removed");
 
     }
 }

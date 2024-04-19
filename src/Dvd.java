@@ -1,22 +1,9 @@
-public class Dvd implements User{
-    private String nameD;
-    private int idD;
+public class Dvd extends Library implements User{
 
-    public int getIdD() {
-        return idD;
+    public Dvd(String name, int id){
+        super(name, id);
     }
 
-    public String getNameD() {
-        return nameD;
-    }
-
-    public void setIdD(int D) {
-        idD = D;
-    }
-
-    public void setNameD(String nD) {
-        nameD = nD;
-    }
 
     @Override
     public void borrowItem() {
@@ -26,6 +13,17 @@ public class Dvd implements User{
     @Override
     public void returnItem() {
         System.out.println("the DVD is returned");
+
+    }
+
+    @Override
+    public void addItem() {
+        System.out.println("DVD has beend added");
+    }
+
+    @Override
+    public void removeItem() {
+        System.out.println("DVD removed");
 
     }
 }
